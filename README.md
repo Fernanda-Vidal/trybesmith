@@ -44,7 +44,7 @@ Ao iniciar este projeto, você concorda com as diretrizes do Código de Conduta 
   
   * Este projeto é individual
   * Serão `2` dias de projeto
-  * Data para entrega final do projeto: `13/10/2022 14:00`
+  * Data para entrega no prazo regular: `13/10/2022 14:00`
 
 </details>
 
@@ -58,7 +58,7 @@ Ao iniciar este projeto, você concorda com as diretrizes do Código de Conduta 
  
 
   > Rode os serviços `node` e `db` com o comando `docker-compose up -d`.
-  - Lembre-se de parar o `mysql` se estiver usando localmente na porta padrão (`3306`), ou adapte, caso queria fazer uso da aplicação em containers
+  - Lembre-se de parar o `mysql` se estiver usando localmente na porta padrão (`3306`), ou adapte, caso queira fazer uso da aplicação em containers
   - Esses serviços irão inicializar um container chamado `trybesmith` e outro chamado `trybesmith_db`.
   - A partir daqui você pode rodar o container `trybesmith` via CLI ou abri-lo no VS Code.
 
