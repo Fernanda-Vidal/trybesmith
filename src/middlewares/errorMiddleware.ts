@@ -1,11 +1,11 @@
 import { Request, Response, NextFunction } from 'express';
 
 function errorMiddleware(err: Error, _req: Request, res: Response, next: NextFunction) {
-  const { name, message, details } = err as any;
+  const { name, message } = err;
 
   switch (name) {
     case 'ValidationError':
-      res.status(400).json({ message: details[0].message });
+      res.status(400).json({ message });
       break;
     case 'NotFoundError':
       res.status(404).json({ message });
