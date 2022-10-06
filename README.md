@@ -118,7 +118,7 @@ Ao iniciar este projeto, você concorda com as diretrizes do Código de Conduta 
 
   1. Clone o repositório
 
-  - `git clone https://github.com/tryber/sd-021-a-project-trybesmith.git`.
+  - `git clone git@github.com:tryber/sd-021-a-project-trybesmith.git`.
   - Entre na pasta do repositório que você acabou de clonar:
     - `cd sd-021-a-project-trybesmith`
 
