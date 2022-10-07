@@ -1,4 +1,4 @@
-import StatusCodes from "./StatusCodes";
+import StatusCodes from './StatusCodes';
 
 export default function validation(field: string, request: string) {
   if (!field) return { message: `"${request}" is required`, status: StatusCodes.BAD_REQUEST };
