@@ -24,7 +24,7 @@ export default class UserModel {
     const { username, password } = user;
     const [[row]] = await this.connection.execute<(
     IUser & RowDataPacket)[]>(
-      'SELECT * FROM users WHERE username = ? AND password = ?',
+      'SELECT * FROM Trybesmith.Users WHERE username = ? AND password = ?',
       [username, password],    
       );
     return row;
