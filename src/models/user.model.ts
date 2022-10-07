@@ -1,4 +1,4 @@
-import { Pool, ResultSetHeader } from 'mysql2/promise';
+import { Pool, ResultSetHeader, RowDataPacket } from 'mysql2/promise';
 import IUser from '../interfaces/user.interface';
 
 export default class UserModel {
@@ -17,5 +17,16 @@ export default class UserModel {
     const [dataInserted] = result;
     const { insertId } = dataInserted;
     return { id: insertId, ...user };
+  }
+
+  public async getUser(user: Omit<IUser, 'classe' | 'level'>):
+  Promise<Omit<IUser, 'classe' | 'level'>> {
+    const { username, password } = user;
+    const [[row]] = await this.connection.execute<(
+    IUser & RowDataPacket)[]>(
+      'SELECT * FROM users WHERE username = ? AND password = ?',
+      [username, password],    
+      );
+    return row;
   }
 }
