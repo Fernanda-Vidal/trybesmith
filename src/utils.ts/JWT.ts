@@ -4,7 +4,7 @@ import IUser from '../interfaces/user.interface';
 
 dotenv.config();
 
-const generateToken = (user: IUser) => {
+const generateToken = (user: IUser): string => {
   const { id, username, classe, level } = user;
   const password = process.env.JWT_SECRET;
   const jwtConfig = { expiresIn: '1h' };
