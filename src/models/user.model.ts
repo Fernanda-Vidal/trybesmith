@@ -27,6 +27,7 @@ export default class UserModel {
       'SELECT * FROM Trybesmith.Users WHERE username = ? AND password = ?',
       [username, password],    
       );
+
     return row;
   }
 }
