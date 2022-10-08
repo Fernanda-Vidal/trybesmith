@@ -15,10 +15,13 @@ const generateToken = (user: Omit<IUser, 'classe' | 'level' | 'password'>): stri
   return token;
 };
 
-export const validateToken = (token: string): JwtPayload => {
-  const validate = jwt.verify(token, PASSWORD as Secret);
-
-  return validate as JwtPayload;
+export const validateToken = (token: string) => {
+  try {
+    const validate = jwt.verify(token, PASSWORD as Secret);
+    return validate as JwtPayload;
+  } catch (error) {
+    return false;
+  }
 };
 
 export default generateToken;
