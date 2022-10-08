@@ -15,11 +15,11 @@ export default class LoginService {
   public async login(user: IUser) {
     const { username, password } = user;
     const userExists = await this.model.getUser({ username, password });
-
+    
     if (!userExists) {
       throw new HttpException('Username or password invalid', StatusCodes.UNAUTHORIZED);
     }
 
-    return generateToken(user);
+    return generateToken(userExists);
   }
 }
