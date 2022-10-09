@@ -13,4 +13,10 @@ export default class OrderService {
     const result = await this.model.getAllOrders();
     return result;
   }
+
+  public async placeAndOrder(productsIds: number[], userId: number): Promise<void> {
+    const orderId = await this.model.placeAnOrder(userId);
+    await Promise.all(productsIds
+      .map((id) => this.model.updateProducts(id, orderId)));
+  }
 }
