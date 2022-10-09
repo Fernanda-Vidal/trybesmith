@@ -13,4 +13,11 @@ export default class OrderController {
     const orders = await this.service.getAllOrders();
     res.status(StatusCodes.OK).json(orders);
   };
+
+  public placeAnOrder = async (req: Request, res: Response) => {
+    const { productsIds, token } = req.body;
+
+    await this.service.placeAndOrder(productsIds, token);
+    return res.status(StatusCodes.CREATED).json({ userId: token, productsIds });
+  };
 }
